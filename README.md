@@ -1,2 +1,2 @@
 # DigitalRain
-Responsive, digital rain in the browser.
+Digital rain in the browser.
