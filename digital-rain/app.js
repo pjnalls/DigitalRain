@@ -1,0 +1,16 @@
+const code = `IFヨウアLレアDYハVエWハTヨウンエエD１WHYアSKFオRモレか
+
+OンLYアSKFオRモレTハンWハTヨウレQウイレイFヨウPラントギVエイTトTヘンエエDY０
+
+0BウTヨウCアンンエVエRハVエエンオウGH０0
+JウSTアSヨウCアンンエVエRハVエンオTヒンG０
+
+TヘレイSアLワYSソメTヒンG１ソプTソメTヒンG１アンYTヒンGオRエVエRYTヒンGヨウポSセSSトゴオDウセ０
+
+FオRイTイSTヒエVイSHトベリケアDラゴンWホエSタBリSヘSTヘイRンエSTインTヘイRライRオンアモウンタインオFゴLDアンDヂエSウポンイT０
+
+TヘYサVエFオRTヘMセLVエSアンDアFエWブTオウGHTトベアFオウンダTイオンオFレソウRCエSFオRTヘWオRLD０
+
+WエSタレンオTイントアミRロRインFロンTオFオウR0VアンイTY0;
+レFレCTイオンSアレCアSTBYTヘダイLYエXイSテンTイアLアンGSTWエFエエLWヘンWエガゼイントオウRオWンアBYSセS０
+`;
