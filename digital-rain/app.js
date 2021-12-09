@@ -23,6 +23,7 @@ const addLinesOfCode = async () => {
       p.setAttribute("class", "line-of-code");
       p.setAttribute("id", `${i}${j}`);
       p.style.right = `${Math.random() * 200}vw`;
+      p.style.top = `${Math.round(Math.random() * 1) === 0 ? '-' : ''}${Math.random() * 50}vh`;
 
       const timeouts = await revealCodeLikeRain(p, line, i, j);
 
