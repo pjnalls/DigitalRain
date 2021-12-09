@@ -16,14 +16,17 @@ WエSタレンオTイントアミRロRインFロンTオFオウR0VアンイTY0;
 `;
 
 const addLinesOfCode = async () => {
-  new Array(99).fill(0).forEach(async (element, i) => {
+  new Array(199).fill(0).forEach(async (element, i) => {
     code.split("\n").forEach(async (line, j) => {
       const p = document.createElement("p");
 
       p.setAttribute("class", "line-of-code");
       p.setAttribute("id", `${i}${j}`);
       p.style.right = `${Math.random() * 200}vw`;
-      p.style.top = `${Math.round(Math.random() * 1) === 0 ? '-' : ''}${Math.random() * 50}vh`;
+      const sign = Math.round(Math.random() * 1) === 0;
+      p.style.top = `${sign ? "-" : ""}${
+        sign ? Math.random() * 5 : Math.random() * 75
+      }vh`;
 
       const timeouts = await revealCodeLikeRain(p, line, i, j);
 
@@ -38,9 +41,16 @@ const revealCodeLikeRain = async (p, line, i, j) => {
   await line.split("").forEach(async (char, k) => {
     await new Promise(async (resolve) => {
       const timeout = setTimeout(() => {
+        let top = parseFloat(p.style.top.split("v")[0]);
+
         characters += char;
         p.textContent = characters;
+
+        top += 0.4 * (k + 0.4);
+        p.style.top = `${top}vh`;
+
         document.getElementById("root").appendChild(p);
+
         resolve();
       }, 111 * (i + 1 + j + 1 + k + 1) + 333 * (i + 1) + 333 * (j + 1));
       timeouts.push(timeout);
