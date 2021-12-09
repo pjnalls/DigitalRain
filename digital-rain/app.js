@@ -32,7 +32,7 @@ const addLinesOfCode = async () => {
       p.style.right = `${Math.random() * 120}vw`;
       const sign = Math.round(Math.random() * 1) === 0;
       p.style.top = `${sign ? "-" : ""}${
-        sign ? Math.random() * 5 : Math.random() * 70
+        sign ? Math.random() * 5 : Math.random() * 55
       }vh`;
 
       const timeouts = await revealCodeLikeRain(p, line, i, j);

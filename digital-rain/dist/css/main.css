@@ -19,11 +19,37 @@ body {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
-  background: #132311;
+  background: #1f2515;
   width: 100vw;
   overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 500;
+}
+
+body h1 {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  font-weight: 400;
+  font-size: 3.5rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #d0f7d5;
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb;
+  text-orientation: upright;
 }
 
 body #root {
@@ -32,21 +58,13 @@ body #root {
 
 body #root .line-of-code {
   position: absolute;
-  color: #1ff72f;
+  color: #29ff3f;
   padding: 0;
   margin: 0;
   line-height: 0;
 }
 
 body #root .cursor {
-  color: #d3f7d1;
-}
-
-body #root .on {
-  color: #0f0;
-}
-
-body #root .off {
-  color: transparent;
+  color: #d0f7d5;
 }
 /*# sourceMappingURL=main.css.map */
