@@ -1,0 +1,41 @@
+html {
+  /** Make fonts more accessible */
+  font-size: 100%;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  background: #132311;
+  width: 100vw;
+  overflow: hidden;
+  #root {
+    position: relative;
+    .line-of-code {
+      position: absolute;
+      color: #0f0;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+    }
+    .cursor {
+      color: #d3f7d1;
+    }
+    .on {
+      color: #0f0;
+    }
+    .off {
+      color: transparent;
+    }
+  }
+}
