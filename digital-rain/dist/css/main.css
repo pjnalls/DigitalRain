@@ -22,6 +22,8 @@ body {
   background: #132311;
   width: 100vw;
   overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
 }
 
 body #root {

@@ -20,13 +20,13 @@ const sleep = (ms) => {
 };
 
 const addLinesOfCode = async () => {
-  (new Array(49).fill(0)).forEach(async (element, i) => {
+  (new Array(19).fill(0)).forEach(async (element, i) => {
     code.split("\n").forEach(async (line, index) => {
       const p = document.createElement("p");
 
       p.setAttribute("class", "line-of-code");
       p.setAttribute("id", `${i}${index}`);
-      p.style.right = `${Math.random() * 100}vw`;
+      p.style.right = `${Math.random() * 200}vw`;
 
       await revealCodeLikeRain(p, line);
     });
