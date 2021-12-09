@@ -1,0 +1,50 @@
+html {
+  /** Make fonts more accessible */
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  background: #132311;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body #root {
+  position: relative;
+}
+
+body #root .line-of-code {
+  position: absolute;
+  color: #0f0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+body #root .cursor {
+  color: #d3f7d1;
+}
+
+body #root .on {
+  color: #0f0;
+}
+
+body #root .off {
+  color: transparent;
+}
+/*# sourceMappingURL=main.css.map */
