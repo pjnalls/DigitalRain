@@ -24,24 +24,28 @@ const addLinesOfCode = async () => {
       p.setAttribute("id", `${i}${j}`);
       p.style.right = `${Math.random() * 200}vw`;
 
-      revealCodeLikeRain(p, line, i, j);
+      const timeouts = await revealCodeLikeRain(p, line, i, j);
+
+      await timeouts.forEach((t) => clearTimeout(t));
     });
   });
 };
 
-const revealCodeLikeRain = (p, line, i, j) => {
+const revealCodeLikeRain = async (p, line, i, j) => {
   let characters = "";
-  line.split("").forEach(async (char, k) => {
+  let timeouts = [];
+  await line.split("").forEach(async (char, k) => {
     await new Promise(async (resolve) => {
-      await setTimeout(() => {
+      const timeout = setTimeout(() => {
         characters += char;
         p.textContent = characters;
         document.getElementById("root").appendChild(p);
         resolve();
-      }, (100 * (i + 1 + j + 1 + k + 1)) + (250 * (i + 1)) + (200 * (j + 1)));
-      clearTimeout();
+      }, 111 * (i + 1 + j + 1 + k + 1) + 333 * (i + 1) + 333 * (j + 1));
+      timeouts.push(timeout);
     });
   });
+  return new Promise(() => timeouts);
 };
 
 const main = () => {
