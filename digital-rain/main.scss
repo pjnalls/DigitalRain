@@ -4,6 +4,8 @@ $matrix-green-terminal-background: #1f2515;
 $digital-purple-terminal-current: #d5d0f7;
 $digital-purple-terminal-previous: #af39f7;
 $digital-purple-terminal-background: #1f1525;
+$hover-color-current: #fff;
+$hover-color-previous: #ffd7a0;
 
 html {
   /** Make fonts more accessible */
@@ -23,13 +25,14 @@ body {
   padding: 0;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  background: $matrix-green-terminal-background;
+  background: $digital-purple-terminal-background;
   width: 100vw;
   overflow: hidden;
   font-family: "Courier New", Courier, monospace;
   font-weight: 500;
   h1 {
     position: absolute;
+    display: none;
     z-index: 2;
     top: 0;
     left: 0;
@@ -41,7 +44,7 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: $matrix-green-terminal-current;
+    color: transparent;
 
     writing-mode: horizontal-tb;
     text-orientation: upright;
@@ -52,13 +55,22 @@ body {
 
     .line-of-code {
       position: absolute;
-      color: $matrix-green-terminal-previous;
+      color: $digital-purple-terminal-previous;
       padding: 0;
       margin: 0;
       line-height: 0;
+      transition: color 0.01s ease-in-out;
+      z-index: 2;
+      &:hover {
+        color: $hover-color-previous;
+        cursor: pointer;
+        .cursor {
+          color: $hover-color-current;
+        }
+      }
     }
     .cursor {
-      color: $matrix-green-terminal-current;
+      color: $digital-purple-terminal-current;
     }
   }
 }

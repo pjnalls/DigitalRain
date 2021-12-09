@@ -19,7 +19,7 @@ body {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
-  background: #1f2515;
+  background: #1f1525;
   width: 100vw;
   overflow: hidden;
   font-family: "Courier New", Courier, monospace;
@@ -28,6 +28,7 @@ body {
 
 body h1 {
   position: absolute;
+  display: none;
   z-index: 2;
   top: 0;
   left: 0;
@@ -45,7 +46,7 @@ body h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #d0f7d5;
+  color: transparent;
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
           writing-mode: horizontal-tb;
@@ -58,13 +59,25 @@ body #root {
 
 body #root .line-of-code {
   position: absolute;
-  color: #29ff3f;
+  color: #af39f7;
   padding: 0;
   margin: 0;
   line-height: 0;
+  -webkit-transition: color 0.01s ease-in-out;
+  transition: color 0.01s ease-in-out;
+  z-index: 2;
+}
+
+body #root .line-of-code:hover {
+  color: #ffd7a0;
+  cursor: pointer;
+}
+
+body #root .line-of-code:hover .cursor {
+  color: #fff;
 }
 
 body #root .cursor {
-  color: #d0f7d5;
+  color: #d5d0f7;
 }
 /*# sourceMappingURL=main.css.map */

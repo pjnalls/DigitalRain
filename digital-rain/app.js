@@ -61,7 +61,7 @@ const revealCodeLikeRain = async (p, line, i, j) => {
         span.setAttribute("class", "cursor");
         p.appendChild(span);
 
-        top += 0.37 * (k + 0.37);
+        top += 0.3 * (k + 0.3);
         p.style.top = `${top}vh`;
 
         document.getElementById("root").appendChild(p);
