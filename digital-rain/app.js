@@ -15,31 +15,32 @@ WエSタレンオTイントアミRロRインFロンTオFオウR0VアンイTY0;
 レFレCTイオンSアレCアSTBYTヘダイLYエXイSテンTイアLアンGSTWエFエエLWヘンWエガゼイントオウRオWンアBYSセS０
 `;
 
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
 const addLinesOfCode = async () => {
-  (new Array(19).fill(0)).forEach(async (element, i) => {
-    code.split("\n").forEach(async (line, index) => {
+  new Array(99).fill(0).forEach(async (element, i) => {
+    code.split("\n").forEach(async (line, j) => {
       const p = document.createElement("p");
 
       p.setAttribute("class", "line-of-code");
-      p.setAttribute("id", `${i}${index}`);
+      p.setAttribute("id", `${i}${j}`);
       p.style.right = `${Math.random() * 200}vw`;
 
-      await revealCodeLikeRain(p, line);
+      revealCodeLikeRain(p, line, i, j);
     });
   });
 };
 
-const revealCodeLikeRain = async (p, line) => {
+const revealCodeLikeRain = (p, line, i, j) => {
   let characters = "";
-  await line.split("").forEach(async (char) => {
-    characters += char;
-    p.textContent = characters;
-    await new Promise(r => setTimeout(r, 2000));
-    document.getElementById("root").appendChild(p);
+  line.split("").forEach(async (char, k) => {
+    await new Promise(async (resolve) => {
+      await setTimeout(() => {
+        characters += char;
+        p.textContent = characters;
+        document.getElementById("root").appendChild(p);
+        resolve();
+      }, (100 * (i + 1 + j + 1 + k + 1)) + (250 * (i + 1)) + (200 * (j + 1)));
+      clearTimeout();
+    });
   });
 };
 
