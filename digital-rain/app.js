@@ -23,17 +23,15 @@ JウSTアSヨウCアンンエVエRハVエンオTヒンG０
 `;
 
 const addLinesOfCode = async () => {
-  new Array(199).fill(0).forEach(async (element, i) => {
+  new Array(199).fill(0).forEach(async (x, i) => {
     code.split("\n").forEach(async (line, j) => {
       const p = document.createElement("p");
+      const sign = Math.round(Math.random() * 1) === 0 ? "-" : "";
+      const vh = sign === "-" ? Math.random() * 5 : Math.random() * 55;
 
       p.setAttribute("class", "line-of-code");
-      p.setAttribute("id", `${i}${j}`);
       p.style.right = `${Math.random() * 120}vw`;
-      const sign = Math.round(Math.random() * 1) === 0;
-      p.style.top = `${sign ? "-" : ""}${
-        sign ? Math.random() * 5 : Math.random() * 55
-      }vh`;
+      p.style.top = `${sign}${vh}vh`;
 
       const timeouts = await revealCodeLikeRain(p, line, i, j);
 
@@ -45,6 +43,7 @@ const addLinesOfCode = async () => {
 const revealCodeLikeRain = async (p, line, i, j) => {
   let characters = "";
   let timeouts = [];
+
   await line.split("").forEach(async (char, k) => {
     await new Promise(async (resolve) => {
       const timeout = setTimeout(() => {
