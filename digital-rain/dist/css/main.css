@@ -19,7 +19,7 @@ body {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
-  background: #1f1525;
+  background: #252515;
   width: 100vw;
   overflow: hidden;
   font-family: "Courier New", Courier, monospace;
@@ -59,7 +59,7 @@ body #root {
 
 body #root .line-of-code {
   position: absolute;
-  color: #af39f7;
+  color: #29ff3f;
   padding: 0;
   margin: 0;
   line-height: 0;
@@ -78,6 +78,6 @@ body #root .line-of-code:hover .cursor {
 }
 
 body #root .cursor {
-  color: #d5d0f7;
+  color: #d0f7d5;
 }
 /*# sourceMappingURL=main.css.map */

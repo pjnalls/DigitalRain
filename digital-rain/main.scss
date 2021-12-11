@@ -1,6 +1,6 @@
 $matrix-green-terminal-current: #d0f7d5;
 $matrix-green-terminal-previous: #29ff3f;
-$matrix-green-terminal-background: #1f2515;
+$matrix-green-terminal-background: #252515;
 $digital-purple-terminal-current: #d5d0f7;
 $digital-purple-terminal-previous: #af39f7;
 $digital-purple-terminal-background: #1f1525;
@@ -25,7 +25,7 @@ body {
   padding: 0;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  background: $digital-purple-terminal-background;
+  background: $matrix-green-terminal-background;
   width: 100vw;
   overflow: hidden;
   font-family: "Courier New", Courier, monospace;
@@ -55,7 +55,7 @@ body {
 
     .line-of-code {
       position: absolute;
-      color: $digital-purple-terminal-previous;
+      color: $matrix-green-terminal-previous;
       padding: 0;
       margin: 0;
       line-height: 0;
@@ -70,7 +70,7 @@ body {
       }
     }
     .cursor {
-      color: $digital-purple-terminal-current;
+      color: $matrix-green-terminal-current;
     }
   }
 }
