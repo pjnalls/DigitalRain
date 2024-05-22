@@ -28,6 +28,9 @@ LオレMイPスMドロRSイTアメTCオンセCテTウRアヂピSイCインGエ�
 IPサMテMポラFウギアTアリアS1QウアSイエXCエPTウリ1デレCTウSオPTイオVオルPタテSBランヂTイイSVエンイアMエVエンイエTCオンセQウアTウRリベロデビTイS1VオルPタテハルMVエリタTイSエアルMテンエTウRドロレMンウMQウアM0
 `;
 
+const onceMoreBtn = document.getElementsByClassName('once-more')?.item(0);
+const paragraphs = document.getElementsByTagName('p');
+
 const addLinesOfCode = async () => {
   new Array(MAX_RAIN_THREADS).fill(0).forEach(async (_, i) => {
     CODE.split('\n').forEach(async (line, j) => {
@@ -79,9 +82,28 @@ const revealCodeLikeRain = async (
           }
 
           resolve();
+          canEnableOnceBtn();
         }, 111 * (i + 1 + j + 1 + k + 1) + (333 * (i + 1) + 333 * (j + 1)));
       })
   );
+};
+
+const canEnableOnceBtn = () => {
+  if (
+    onceMoreBtn &&
+    onceMoreBtn.classList.contains('disabled') &&
+    paragraphs.length < 24
+  ) {
+    onceMoreBtn.classList.remove('disabled');
+    onceMoreBtn.ariaDisabled = 'false';
+  } else if (
+    onceMoreBtn &&
+    !onceMoreBtn.classList.contains('disabled') &&
+    paragraphs.length >= 24
+  ) {
+    onceMoreBtn.classList.add('disabled');
+    onceMoreBtn.ariaDisabled = 'true';
+  }
 };
 
 const main = () => {
@@ -89,3 +111,7 @@ const main = () => {
 };
 
 main();
+
+onceMoreBtn?.addEventListener('click', () => {
+  if (paragraphs.length < 24) main();
+});
