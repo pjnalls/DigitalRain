@@ -28,7 +28,7 @@ LオレMイPスMドロRSイTアメTCオンセCテTウRアヂピSイCインGエ�
 IPサMテMポラFウギアTアリアS1QウアSイエXCエPTウリ1デレCTウSオPTイオVオルPタテSBランヂTイイSVエンイアMエVエンイエTCオンセQウアTウRリベロデビTイS1VオルPタテハルMVエリタTイSエアルMテンエTウRドロレMンウMQウアM0
 `;
 
-const onceMoreBtn = document.getElementsByClassName('once-more')?.item(0);
+const reloadBtn = document.getElementsByClassName('reload')?.item(0);
 const paragraphs = document.getElementsByTagName('p');
 
 const addLinesOfCode = async () => {
@@ -90,19 +90,21 @@ const revealCodeLikeRain = async (
 
 const canEnableOnceBtn = () => {
   if (
-    onceMoreBtn &&
-    onceMoreBtn.classList.contains('disabled') &&
+    reloadBtn &&
+    reloadBtn.classList.contains('disabled') &&
     paragraphs.length < 24
   ) {
-    onceMoreBtn.classList.remove('disabled');
-    onceMoreBtn.ariaDisabled = 'false';
+    reloadBtn.classList.remove('disabled');
+    reloadBtn.classList.add('hover-enabled');
+    reloadBtn.ariaDisabled = 'false';
   } else if (
-    onceMoreBtn &&
-    !onceMoreBtn.classList.contains('disabled') &&
+    reloadBtn &&
+    !reloadBtn.classList.contains('disabled') &&
     paragraphs.length >= 24
   ) {
-    onceMoreBtn.classList.add('disabled');
-    onceMoreBtn.ariaDisabled = 'true';
+    reloadBtn.classList.add('disabled');
+    reloadBtn.classList.remove('hover-enabled');
+    reloadBtn.ariaDisabled = 'true';
   }
 };
 
@@ -112,6 +114,6 @@ const main = () => {
 
 main();
 
-onceMoreBtn?.addEventListener('click', () => {
+reloadBtn?.addEventListener('click', () => {
   if (paragraphs.length < 24) main();
 });

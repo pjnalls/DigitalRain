@@ -64,14 +64,14 @@ body {
       writing-mode: horizontal-tb;
       text-orientation: upright;
     }
-    .once-more-container {
+    .reload-container {
       padding: 12px;
-      .once-more {
+      .reload {
         filter: invert(48%) sepia(79%) saturate(400%) hue-rotate(90deg)
           brightness(118%) contrast(120%);
           transition: all 0.3s ease;
         width: 32px;
-        &:hover {
+        &.hover-enabled:hover {
           cursor: pointer;
           filter: invert(48%) sepia(79%) saturate(200%) hue-rotate(80deg)
             brightness(100%) contrast(100%);
